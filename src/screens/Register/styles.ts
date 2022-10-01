@@ -1,5 +1,6 @@
 import { RFValue } from 'react-native-responsive-fontsize'
 import styled from 'styled-components/native'
+import { Platform } from 'react-native'
 
 export const Container = styled.View`
   flex: 1;
@@ -9,7 +10,7 @@ export const Container = styled.View`
 export const Header = styled.View`
   background-color: ${({ theme }) => theme.colors.primary};
   width: 100%;
-  height: ${RFValue(113)}px;
+  height: ${Platform.OS === 'ios' ? RFValue(113): RFValue(80)}px;
   align-items: center;
   justify-content: flex-end;
   padding-bottom: 19px;
