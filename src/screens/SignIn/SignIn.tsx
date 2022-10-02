@@ -1,11 +1,12 @@
-import React, { useContext } from 'react'
-import { Alert } from 'react-native'
+import React, { useState } from 'react'
+import { ActivityIndicator, Alert, Platform } from 'react-native'
 import { RFValue } from 'react-native-responsive-fontsize'
 import AppleSvg from '../../assets/apple.svg'
 import GoogleSvg from '../../assets/google.svg'
 import LogoSvg from '../../assets/logo.svg'
 import { SocialSignInButton } from '../../components/SocialSignInButton'
 import { useAuth } from '../../hooks/auth'
+import { useTheme } from 'styled-components'
 import {
   Container,
   Header,
@@ -17,14 +18,29 @@ import {
 } from './styles'
 
 export function SignIn() {
-  const { signInWithGoogle } = useAuth()
+  const { signInWithGoogle, signInWithApple } = useAuth()
+  const [isLoading, setIsLoading] = useState(false)
+  const theme = useTheme()
 
   async function handleSignInWithGoogle() {
     try {
-      await signInWithGoogle()
+      setIsLoading(true)
+      return await signInWithGoogle()
     } catch (error) {
       console.log(error)
       Alert.alert('Não foi possível conectar na conta Google.')
+      setIsLoading(false)
+    }
+  }
+
+  async function handleSignInWithApple() {
+    try {
+      setIsLoading(true)
+      return await signInWithGoogle()
+    } catch (error) {
+      console.log(error)
+      Alert.alert('Não foi possível conectar na conta Apple.')
+      setIsLoading(false)
     }
   }
 
@@ -57,11 +73,20 @@ export function SignIn() {
             svg={GoogleSvg}
             onPress={handleSignInWithGoogle}
           />
-          <SocialSignInButton
-            title='Entrar com Apple'
-            svg={AppleSvg}
-          />
+
+          {Platform.OS === 'ios' &&
+            <SocialSignInButton
+              title='Entrar com Apple'
+              svg={AppleSvg}
+              onPress={handleSignInWithApple}
+            />
+          }
         </FooterWrapper>
+
+        {isLoading &&
+          <ActivityIndicator color={theme.colors.shape}
+            style={{ marginTop: 24 }}
+          />}
       </Footer>
     </Container>
   )

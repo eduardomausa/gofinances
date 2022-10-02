@@ -1710,6 +1710,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@expo/config-plugins@npm:^4.0.2":
+  version: 4.1.5
+  resolution: "@expo/config-plugins@npm:4.1.5"
+  dependencies:
+    "@expo/config-types": ^45.0.0
+    "@expo/json-file": 8.2.36
+    "@expo/plist": 0.0.18
+    "@expo/sdk-runtime-versions": ^1.0.0
+    "@react-native/normalize-color": ^2.0.0
+    chalk: ^4.1.2
+    debug: ^4.3.1
+    find-up: ~5.0.0
+    getenv: ^1.0.0
+    glob: 7.1.6
+    resolve-from: ^5.0.0
+    semver: ^7.3.5
+    slash: ^3.0.0
+    xcode: ^3.0.1
+    xml2js: 0.4.23
+  checksum: f631217251281b1e25949adbec175ef1362dd08d837ce676ed8350c1401b5764091ba100f76f42adb623e4cdcde5b270be77ad6606f978d419c07fd8c81b701c
+  languageName: node
+  linkType: hard
+
 "@expo/config-plugins@npm:~5.0.0, @expo/config-plugins@npm:~5.0.1":
   version: 5.0.1
   resolution: "@expo/config-plugins@npm:5.0.1"
@@ -1730,6 +1753,13 @@ __metadata:
     xcode: ^3.0.1
     xml2js: 0.4.23
   checksum: bd7139ba8728e7117aaa1ae056190ed69bfde707286d13ef2fe26201381753e6d2066a223eb69547825ab1469c253a75f2e73fad82021b2a7589bb98fd8bf8bb
+  languageName: node
+  linkType: hard
+
+"@expo/config-types@npm:^45.0.0":
+  version: 45.0.0
+  resolution: "@expo/config-types@npm:45.0.0"
+  checksum: 9b4866540654da61af0985ebfc975b3cb690625acf7742443a7e56263bf134b261e22719720982223407f8957d08a3646178c79f482861218882f0956d804021
   languageName: node
   linkType: hard
 
@@ -2477,6 +2507,24 @@ __metadata:
   dependencies:
     nanoid: ^3.1.23
   checksum: edcdc429cd65de42d7ee8684c148e25998c778e3c06844eae02c35a531c2a52c3be3e3664d1a1058346526af7c2a0b4aceb80b8dbdcf9b4d87e331eaac1e7977
+  languageName: node
+  linkType: hard
+
+"@react-navigation/stack@npm:^6.3.1":
+  version: 6.3.1
+  resolution: "@react-navigation/stack@npm:6.3.1"
+  dependencies:
+    "@react-navigation/elements": ^1.3.6
+    color: ^4.2.3
+    warn-once: ^0.1.0
+  peerDependencies:
+    "@react-navigation/native": ^6.0.0
+    react: "*"
+    react-native: "*"
+    react-native-gesture-handler: ">= 1.0.0"
+    react-native-safe-area-context: ">= 3.0.0"
+    react-native-screens: ">= 3.0.0"
+  checksum: 0efd4d98526b5d960e79140ba297a8de25fb4183b379893e14018920f74519852b72bef29f193fefdb9e58053ba760470fe4f17148bca52fc8932b383cc056c0
   languageName: node
   linkType: hard
 
@@ -3274,6 +3322,20 @@ __metadata:
   dependencies:
     object.assign: ^4.1.0
   checksum: c9d24415bcc608d0db7d4c8540d8002ac2f94e2573d2eadced137a29d9eab7e25d2cbb4bc6b9db65cf6ee7430f7dd011d19c911a9a778f0533b4a05ce8292c9b
+  languageName: node
+  linkType: hard
+
+"babel-plugin-inline-dotenv@npm:^1.7.0":
+  version: 1.7.0
+  resolution: "babel-plugin-inline-dotenv@npm:1.7.0"
+  dependencies:
+    dotenv: ^16.0.0
+  peerDependencies:
+    dotenv-expand: ">= 5.0.0"
+  peerDependenciesMeta:
+    dotenv-expand:
+      optional: true
+  checksum: 1203b100b84d247a0db5d1f2565f452e1afa3f747e5ad872ddbf3533b49ec2173ba2c99d22c05fa902914da8de331fbc714132c2eda7b0a2a26fa909dbb10a67
   languageName: node
   linkType: hard
 
@@ -4707,6 +4769,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dotenv@npm:^16.0.0":
+  version: 16.0.3
+  resolution: "dotenv@npm:16.0.3"
+  checksum: afcf03f373d7a6d62c7e9afea6328e62851d627a4e73f2e12d0a8deae1cd375892004f3021883f8aec85932cd2834b091f568ced92b4774625b321db83b827f8
+  languageName: node
+  linkType: hard
+
 "ee-first@npm:1.1.1":
   version: 1.1.1
   resolution: "ee-first@npm:1.1.1"
@@ -4928,12 +4997,35 @@ __metadata:
   languageName: node
   linkType: hard
 
+"expo-app-auth@npm:~11.1.0":
+  version: 11.1.1
+  resolution: "expo-app-auth@npm:11.1.1"
+  dependencies:
+    "@expo/config-plugins": ^4.0.2
+    invariant: ^2.2.4
+  peerDependencies:
+    expo: "*"
+  checksum: 52aa04a07d9e7e87ea9897b12e635b8c59c63026d37831d783a44aeca5c19ed5da970159ad83a15ff0d629c5fc83d6e71a22298aadac5c3a66486f2bff8876e8
+  languageName: node
+  linkType: hard
+
 "expo-app-loading@npm:~2.1.0":
   version: 2.1.0
   resolution: "expo-app-loading@npm:2.1.0"
   dependencies:
     expo-splash-screen: ~0.16.0
   checksum: 14463b35a275962b4c38d91099184a2a0ecc710b3030de1e928995b0651d6ba58cffedca388c54aa2ae8f28284d4a189736b66e4bd1d483ff6e03255a34671d9
+  languageName: node
+  linkType: hard
+
+"expo-apple-authentication@npm:~4.3.0":
+  version: 4.3.0
+  resolution: "expo-apple-authentication@npm:4.3.0"
+  dependencies:
+    "@expo/config-plugins": ~5.0.0
+  peerDependencies:
+    expo: "*"
+  checksum: 677487ffe771f3d6b22985ee3ba8a91ccdc4bcbb593ece556fecc5106930dcfa6b83316c673856ff0e714981d52aa9dd5461bc0c755696af88eef2c74c36f147
   languageName: node
   linkType: hard
 
@@ -5030,6 +5122,15 @@ __metadata:
   peerDependencies:
     expo: "*"
   checksum: bffd3b4c2ae235eb5edd51dc3f27ca41056fc6ad9055d0473961f3b7097ad47b5f1622a51c8d62e6193bad8e195e2e9907ad776daefb1a183f9e9ddfa436c31a
+  languageName: node
+  linkType: hard
+
+"expo-google-app-auth@npm:~8.3.0":
+  version: 8.3.0
+  resolution: "expo-google-app-auth@npm:8.3.0"
+  dependencies:
+    expo-app-auth: ~11.1.0
+  checksum: e67c2da96652d6ad9c9dbf5c49e2cd69ee5b50703e82c441c44715cb694050c61b01b27a4114dee767814d60c7b766b0f56e4ba570cbab0b397984ee489fe973
   languageName: node
   linkType: hard
 
@@ -5683,14 +5784,18 @@ __metadata:
     "@react-native-async-storage/async-storage": ~1.17.3
     "@react-navigation/bottom-tabs": ^6.4.0
     "@react-navigation/native": ^6.0.13
+    "@react-navigation/stack": ^6.3.1
     "@types/react": ~18.0.0
     "@types/react-native": ~0.69.1
     "@types/styled-components-react-native": ^5.1.3
+    babel-plugin-inline-dotenv: ^1.7.0
     date-fns: ^2.29.3
     expo: ~46.0.9
     expo-app-loading: ~2.1.0
+    expo-apple-authentication: ~4.3.0
     expo-auth-session: ~3.7.1
     expo-font: ~10.2.0
+    expo-google-app-auth: ~8.3.0
     expo-random: ~12.3.0
     expo-splash-screen: ~0.16.2
     expo-status-bar: ~1.4.0
@@ -5698,7 +5803,7 @@ __metadata:
     react: 18.0.0
     react-dom: 18.0.0
     react-hook-form: ^7.36.1
-    react-native: 0.69.5
+    react-native: 0.69.6
     react-native-gesture-handler: ~2.5.0
     react-native-iphone-x-helper: ^1.3.1
     react-native-responsive-fontsize: ^0.5.1
@@ -8430,7 +8535,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"promise@npm:^8.0.3":
+"promise@npm:^8.2.0":
   version: 8.2.0
   resolution: "promise@npm:8.2.0"
   dependencies:
@@ -8777,9 +8882,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native@npm:0.69.5":
-  version: 0.69.5
-  resolution: "react-native@npm:0.69.5"
+"react-native@npm:0.69.6":
+  version: 0.69.6
+  resolution: "react-native@npm:0.69.6"
   dependencies:
     "@jest/create-cache-key-function": ^27.0.1
     "@react-native-community/cli": ^8.0.4
@@ -8802,7 +8907,7 @@ __metadata:
     mkdirp: ^0.5.1
     nullthrows: ^1.1.1
     pretty-format: ^26.5.2
-    promise: ^8.0.3
+    promise: ^8.2.0
     react-devtools-core: 4.24.0
     react-native-codegen: ^0.69.2
     react-native-gradle-plugin: ^0.0.7
@@ -8818,7 +8923,7 @@ __metadata:
     react: 18.0.0
   bin:
     react-native: cli.js
-  checksum: 4f7cfcd0d614cc6fe897a49197bd036210625c5eb547342ac7ebea45ab5febae73d6a9a7438f08f454d1e02c2e041b3f910461c4a6e5c6e0e44f5cfe70405990
+  checksum: d050b9f0389362368cd1286c02dd46cd84def9fcbf4774dcedd5cbc3aa9ad594de48f22c5458ec257c07646d79722256bc837b25205c3a52752d5c5b6a7873f4
   languageName: node
   linkType: hard
 
