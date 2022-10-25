@@ -108,8 +108,7 @@ export function Register() {
         name: 'Categoria',
       })
 
-      navigation.navigate('Listagem')
-
+      navigation.navigate('Resumo')
     } catch (error) {
       console.log(error)
       Alert.alert('Não foi possível salvar!')
@@ -165,6 +164,7 @@ export function Register() {
             </TransactionTypes>
 
             <CategorySelectButton
+              testID='category-button'
               title={category.name}
               onPress={handleOpenSelectCategoryModal}
             />
@@ -176,7 +176,7 @@ export function Register() {
           />
         </Form>
 
-        <Modal visible={categoryModalOpen}>
+        <Modal testID='modal-category' visible={categoryModalOpen}>
           <CategorySelect
             category={category}
             setCategory={setCategory}
