@@ -1,7 +1,7 @@
-import React from 'react';
-import { View, Text, TextInput, Button } from 'react-native';
+import React from 'react'
+import { View, Text, TextInput, Button } from 'react-native'
 
-export function Profile() {
+export function Profile () {
   return (
     <View>
       <Text testID='text-title'>Perfil</Text>
@@ -24,5 +24,5 @@ export function Profile() {
         onPress={() => { }}
       />
     </View>
-  );
+  )
 }

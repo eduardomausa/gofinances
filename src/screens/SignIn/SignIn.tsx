@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
-import { ActivityIndicator, Alert, Platform } from 'react-native'
-import { RFValue } from 'react-native-responsive-fontsize'
-import AppleSvg from '../../assets/apple.svg'
-import GoogleSvg from '../../assets/google.svg'
-import LogoSvg from '../../assets/logo.svg'
-import { SocialSignInButton } from '../../components/SocialSignInButton'
-import { useAuth } from '../../hooks/auth'
-import { useTheme } from 'styled-components'
+import React, { useState } from 'react';
+import { ActivityIndicator, Alert, Platform } from 'react-native';
+import { RFValue } from 'react-native-responsive-fontsize';
+import AppleSvg from '../../assets/apple.svg';
+import GoogleSvg from '../../assets/google.svg';
+import LogoSvg from '../../assets/logo.svg';
+import { SocialSignInButton } from '../../components/SocialSignInButton';
+import { useAuth } from '../../hooks/auth';
+import { useTheme } from 'styled-components';
 import {
   Container,
   Header,
@@ -15,32 +15,34 @@ import {
   SignInTitle,
   Footer,
   FooterWrapper,
-} from './styles'
+} from './styles';
 
 export function SignIn() {
-  const { signInWithGoogle, signInWithApple } = useAuth()
-  const [isLoading, setIsLoading] = useState(false)
-  const theme = useTheme()
+  const { signInWithGoogle, signInWithApple } = useAuth();
+  const [isLoading, setIsLoading] = useState(false);
+  const theme = useTheme();
 
   async function handleSignInWithGoogle() {
     try {
-      setIsLoading(true)
-      return await signInWithGoogle()
+      setIsLoading(true);
+      await signInWithGoogle();
+      return;
     } catch (error) {
-      console.log(error)
-      Alert.alert('Não foi possível conectar na conta Google.')
-      setIsLoading(false)
+      console.log(error);
+      Alert.alert('Não foi possível conectar na conta Google.');
+      setIsLoading(false);
     }
   }
 
   async function handleSignInWithApple() {
     try {
-      setIsLoading(true)
-      return await signInWithGoogle()
+      setIsLoading(true);
+      await signInWithApple();
+      return;
     } catch (error) {
-      console.log(error)
-      Alert.alert('Não foi possível conectar na conta Apple.')
-      setIsLoading(false)
+      console.log(error);
+      Alert.alert('Não foi possível conectar na conta Apple.');
+      setIsLoading(false);
     }
   }
 
@@ -48,15 +50,11 @@ export function SignIn() {
     <Container>
       <Header>
         <TitleWrapper>
-          <LogoSvg
-            width={RFValue(120)}
-            height={RFValue(68)}
-          />
+          <LogoSvg width={RFValue(120)} height={RFValue(68)} />
 
           <Title>
             Controle suas {'\n'}
-            finanças de forma
-            muito simples
+            finanças de forma muito simples
           </Title>
         </TitleWrapper>
 
@@ -69,25 +67,27 @@ export function SignIn() {
       <Footer>
         <FooterWrapper>
           <SocialSignInButton
-            title='Entrar com Google'
+            title="Entrar com Google"
             svg={GoogleSvg}
             onPress={handleSignInWithGoogle}
           />
 
-          {Platform.OS === 'ios' &&
+          {Platform.OS === 'ios' && (
             <SocialSignInButton
-              title='Entrar com Apple'
+              title="Entrar com Apple"
               svg={AppleSvg}
               onPress={handleSignInWithApple}
             />
-          }
+          )}
         </FooterWrapper>
 
-        {isLoading &&
-          <ActivityIndicator color={theme.colors.shape}
+        {isLoading && (
+          <ActivityIndicator
+            color={theme.colors.shape}
             style={{ marginTop: 24 }}
-          />}
+          />
+        )}
       </Footer>
     </Container>
-  )
+  );
 }

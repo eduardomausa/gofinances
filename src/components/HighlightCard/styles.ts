@@ -6,7 +6,7 @@ interface TypeProps {
   type: 'up' | 'down' | 'total'
 }
 
-export const Container = styled.View<TypeProps>` 
+export const Container = styled.View<TypeProps>`
   background-color: ${({ theme, type }) =>
     type === 'total' ? theme.colors.secondary : theme.colors.shape};
   width: ${RFValue(300)}px;
@@ -28,17 +28,23 @@ export const Title = styled.Text<TypeProps>`
     type === 'total' ? theme.colors.shape : theme.colors.text_dark};
 `
 
-export const Icon = styled(Feather) <TypeProps>`
+export const Icon = styled(Feather)<TypeProps>`
   font-size: ${RFValue(40)}px;
-  ${(type) => type.type === 'up' && css`
-    color: ${({ theme }) => theme.colors.success};
-  `}
-  ${(type) => type.type === 'down' && css`
-    color: ${({ theme }) => theme.colors.attention};
-  `}
-  ${(type) => type.type === 'total' && css`
-    color: ${({ theme }) => theme.colors.shape};
-  `}
+  ${(type) =>
+    type.type === 'up' &&
+    css`
+      color: ${({ theme }) => theme.colors.success};
+    `}
+  ${(type) =>
+    type.type === 'down' &&
+    css`
+      color: ${({ theme }) => theme.colors.attention};
+    `}
+  ${(type) =>
+    type.type === 'total' &&
+    css`
+      color: ${({ theme }) => theme.colors.shape};
+    `}
 `
 
 export const Footer = styled.View``

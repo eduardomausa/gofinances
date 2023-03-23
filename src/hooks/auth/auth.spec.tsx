@@ -1,5 +1,5 @@
-import { renderHook, act } from '@testing-library/react-hooks';
-import { AuthProvider, useAuth } from '.';
+import { renderHook, act } from '@testing-library/react-hooks'
+import { AuthProvider, useAuth } from '.'
 
 jest.mock('expo-auth-session', () => {
   return {
@@ -12,28 +12,28 @@ jest.mock('expo-auth-session', () => {
       }
     }
   }
-});
+})
 
 describe('Auth Hook', () => {
   it('should be able to sign in with Google account', async () => {
-    global.fetch = jest.fn(() => Promise.resolve({
-      json: () =>
-        Promise.resolve({
-          id: `userInfo.id`,
-          email: `userInfo.email`,
-          name: `userInfo.given_name`,
-          photo: `userInfo.picture`,
-          locale: `userInfo.locale`,
-          verified_email: `userInfo.verified_email`
-        }),
-    })) as jest.Mock;
+    global.fetch = jest.fn(async () => await Promise.resolve({
+      json: async () =>
+        await Promise.resolve({
+          id: 'userInfo.id',
+          email: 'userInfo.email',
+          name: 'userInfo.given_name',
+          photo: 'userInfo.picture',
+          locale: 'userInfo.locale',
+          verified_email: 'userInfo.verified_email'
+        })
+    })) as jest.Mock
 
     const { result } = renderHook(() => useAuth(), {
       wrapper: AuthProvider
-    });
+    })
 
-    await act(() => result.current.signInWithGoogle());
+    await act(async () => { await result.current.signInWithGoogle() })
 
-    expect(result.current.user).toBeTruthy();
-  });
-});
+    expect(result.current.user).toBeTruthy()
+  })
+})

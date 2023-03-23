@@ -9,9 +9,8 @@ import {
   Category,
   Icon,
   CategoryName,
-  Date,
+  Date
 } from './styles'
-
 
 export interface TransactionCardProps {
   type: 'positive' | 'negative'
@@ -25,16 +24,12 @@ interface Props {
   data: TransactionCardProps
 }
 
-export function TransactionCard({ data }: Props) {
-  const [category] = categories.filter(
-    item => item.key === data.category
-  )
+export function TransactionCard ({ data }: Props) {
+  const [category] = categories.filter((item) => item.key === data.category)
 
   return (
     <Container>
-      <Title>
-        {data.name}
-      </Title>
+      <Title>{data.name}</Title>
 
       <Amount type={data.type}>
         {data.type === 'negative' && '- '}
@@ -49,7 +44,6 @@ export function TransactionCard({ data }: Props) {
 
         <Date>{data.date}</Date>
       </Footer>
-
     </Container>
   )
 }
