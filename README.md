@@ -28,8 +28,5 @@
 Clone the project and run: 
 ```yarn install```
 
-You can run ```yarn android``` or ```yarn ios``` to build the app
-
-After that, run:
-```yarn start```
+You can run ```yarn android``` or ```yarn ios``` to build and start the app in the emulator.
 
